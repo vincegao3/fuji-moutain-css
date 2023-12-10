@@ -1,3 +1,7 @@
+.picture{
+    width: 1000px;
+    height: 1000px;
+}
 .mountain {
     position: absolute;
     bottom: 0;
@@ -6,7 +10,7 @@
     border-bottom: 250px solid #7ac1e4;
     z-index: 1;
     width: 300px;
-    left: 150px
+    left: 100px
 }
 .mountain-top{
     position: absolute;
@@ -62,6 +66,76 @@
     border-top: 25px solid #ceeaf6;
 }
 
+.tree {
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 100px;
+    height: 200px;
+    z-index: 1;
+}
+.tree2 {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    width: 100px;
+    height: 200px;
+    z-index: 1;
+
+}
+
+.tree-top {
+	position: relative;
+	background-color: orange;
+	text-align: left;
+    margin-left: 15px;
+    animation: tree 80s infinite;
+}
+.tree-top:before,
+.tree-top:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+.tree-top,
+.tree-top:before,
+.tree-top:after {
+	width:  4.5em;
+	height: 4.5em;
+	border-top-right-radius: 30%;
+}
+
+.tree-top {
+	transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+}
+.tree-top:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.tree-top:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
+
+/* .tree-top {
+    position: absolute;
+    bottom: 20;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid green;
+    z-index: 2;
+    animation: tree 80s infinite;
+} */
+
+.tree-trunk {
+    position: absolute;
+    bottom: 0;
+    left:40px;
+    width: 20px;
+    height: 102px;
+    background-color: brown;
+    z-index: 3;
+}
+
 @keyframes daylight {
     0% {  background-color: #70c4c6;}
     35% {  background-color: #e2b553; }
@@ -71,14 +145,21 @@
 }
 
 @keyframes sunMovement{
-    0% { -webkit-transform: rotate(-180deg) translateX(450px)  }
-    50% {  -webkit-transform: rotate(0deg) translateX(450px) } 
-    100% { -webkit-transform: rotate(180deg) translateX(450px) }
-
+    0% { -webkit-transform: rotate(-180deg) translateX(400px)  }
+    50% {  -webkit-transform: rotate(0deg) translateX(400px) } 
+    100% { -webkit-transform: rotate(180deg) translateX(400px) }
 }
 
 @keyframes moonMovement{
-    0% { -webkit-transform: rotate(0deg) translateX(450px)  }
-    50% { -webkit-transform: rotate(180deg) translateX(450px)  }
-    100% {  -webkit-transform: rotate(360deg) translateX(450px) }
+    0% { -webkit-transform: rotate(0deg) translateX(400px)  }
+    50% { -webkit-transform: rotate(180deg) translateX(400px)  }
+    100% {  -webkit-transform: rotate(360deg) translateX(400px) }
+}
+
+@keyframes tree {
+    0% {    background-color:  pink;}
+    30% {  background-color: lightgreen;}
+    50% {  background-color:  green;}
+    75% {  background-color:  #e2b553;}
+    100% {  background-color: transparent;}
 }
